@@ -19,13 +19,13 @@
           </td>
           <td class="p-3"><%= link_to @book.title %></td>
           <td class="p-3"><%= @book.body %></td>
-          <td class="p-3">
+          <td id="book_<%= @book.id %>" class="favorite-btn p-3">
             <%= render "favorites/favorite-btn", book: @book %>
           </td>
 
           <% if @book.user_id == current_user.id %>
-            <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-success mr-3" %></td>
-            <td><%= link_to 'Destroy', book_path(@book), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %></td>
+            <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success mr-3" %></td>
+            <td><%= link_to 'Destroy', book_path(@book), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger" %></td>
           <% end %>
 
         </tr>
